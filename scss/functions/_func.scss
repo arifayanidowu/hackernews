@@ -1,0 +1,16 @@
+@function color-mix($color, $amount) {
+  @if map-has-key($color-range, $color) {
+    @warn '> Failed to fetch keys';
+    @return transparentize(map-get($color-range, $color), $amount);
+  }
+}
+
+@function map-colors($color) {
+  @if map-has-key($color-range, $color) {
+    @return map-get($color-range, $color);
+  }
+}
+
+@function col($col) {
+  @return percentage($col/$grid-total);
+}
