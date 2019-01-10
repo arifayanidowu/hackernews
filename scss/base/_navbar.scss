@@ -22,6 +22,7 @@
     font-family: "Rubik", sans-serif;
     text-decoration: none;
     display: inline-block;
+
     padding: 10px 5px;
     transition: color 0.3s;
     @include responsiv(md) {
@@ -47,6 +48,9 @@
       margin: 0 5px;
       padding: 10px 5px;
       transition: all 0.3s;
+      &:hover {
+        background: rgba(255, 166, 0, 0.63);
+      }
       a {
         transition: color 0.3s;
         &:hover {
@@ -103,19 +107,21 @@
   display: grid;
   width: 100%;
   height: 0;
+  visibility: hidden;
   opacity: 0;
   transition: all 0.3s ease-out;
   justify-content: center;
   align-items: center;
   text-align: center;
   grid-gap: 10px;
-  background: map-get($color-range, orange);
+  background: map-colors(orange);
   &.active {
     height: 250px;
     opacity: 1;
+    visibility: visible;
   }
   a {
-    color: map-get($color-range, primary);
+    color: map-colors(primary);
     &:hover {
       color: color-mix(primary, 0.2);
     }

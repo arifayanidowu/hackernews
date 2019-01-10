@@ -16,6 +16,26 @@ html {
 body {
   font-weight: map-get($font-weight, normal);
   background-color: map-colors(light-gray);
+  height: 100%;
+  min-height: 100%;
+  position: relative;
+}
+
+body::after {
+  content: "";
+  min-height: calc(100vh - 75px);
+}
+
+footer {
+  height: 50px;
+  text-align: center;
+  font-size: 12px;
+  margin-top: calc(75vh - 30%);
+  color: map-get($color-range, secondary);
+}
+
+.tp {
+  font-family: "Rubik", sans-serif;
 }
 
 .container {
@@ -62,13 +82,38 @@ body {
   display: grid;
   padding: 15px;
   width: 80%;
-  margin: 3rem auto;
+  margin: 1.3rem auto;
   border-radius: 10px;
   grid-template-columns: repeat(1, 1fr);
   background: #fff;
   box-shadow: 1px 2px 4px 2px rgba(225, 225, 225, 0.5);
 }
 
+.m-auto {
+  margin: 0 auto;
+}
+
+.hr {
+  width: 20px;
+  height: 2px;
+  margin-top: 4px;
+  border: 1px solid rgb(218, 205, 205);
+  outline: none;
+  // color: rgb(134, 128, 128);
+  border-radius: 50px;
+}
+
+.text-light {
+  font-weight: 400;
+}
+
 .text-center {
   text-align: center;
+}
+
+.text-gray {
+  color: map-get($color-range, text-gray);
+}
+small {
+  font-size: 10px;
 }

@@ -78,6 +78,10 @@
   transition: all 0.3s;
 }
 
+.navbar__list-group__item:hover {
+  background: rgba(255, 166, 0, 0.63);
+}
+
 .navbar__list-group__item a {
   -webkit-transition: color 0.3s;
   transition: color 0.3s;
@@ -135,6 +139,7 @@
   display: grid;
   width: 100%;
   height: 0;
+  visibility: hidden;
   opacity: 0;
   -webkit-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
@@ -152,6 +157,7 @@
 #collapsibleNavbar.active {
   height: 250px;
   opacity: 1;
+  visibility: visible;
 }
 
 #collapsibleNavbar a {
@@ -185,6 +191,26 @@ html {
 body {
   font-weight: 400;
   background-color: #f6f6ef;
+  height: 100%;
+  min-height: 100%;
+  position: relative;
+}
+
+body::after {
+  content: "";
+  min-height: calc(100vh - 75px);
+}
+
+footer {
+  height: 50px;
+  text-align: center;
+  font-size: 12px;
+  margin-top: calc(75vh - 30%);
+  color: #423e3e;
+}
+
+.tp {
+  font-family: "Rubik", sans-serif;
 }
 
 .container {
@@ -398,7 +424,7 @@ body {
   display: grid;
   padding: 15px;
   width: 80%;
-  margin: 3rem auto;
+  margin: 1.3rem auto;
   border-radius: 10px;
   -ms-grid-columns: (1fr)[1];
       grid-template-columns: repeat(1, 1fr);
@@ -407,7 +433,32 @@ body {
           box-shadow: 1px 2px 4px 2px rgba(225, 225, 225, 0.5);
 }
 
+.m-auto {
+  margin: 0 auto;
+}
+
+.hr {
+  width: 20px;
+  height: 2px;
+  margin-top: 4px;
+  border: 1px solid #dacdcd;
+  outline: none;
+  border-radius: 50px;
+}
+
+.text-light {
+  font-weight: 400;
+}
+
 .text-center {
   text-align: center;
+}
+
+.text-gray {
+  color: #9e9d9d;
+}
+
+small {
+  font-size: 10px;
 }
 /*# sourceMappingURL=main.css.map */
